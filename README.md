@@ -4,6 +4,59 @@
 
 FinMan is a microservices-based financial management system designed to handle various financial tasks, including user management, transaction processing, role management, and authentication. The system is built using Go and follows a hexagonal architecture to promote maintainability and scalability.
 
+## Helitech Company Task
+
+This project is a solution to a task provided by Helitech. For more information about Helitech, visit [Helitech Technology](https://heli.technology/).
+
+### Task Description
+
+The task involves creating a system for managing financial affairs with the following requirements:
+
+1. **Transaction Management**: 
+   - Allow registration and tracking of financial transactions with details such as transaction type (deposit or withdrawal), amount, and date.
+
+2. **Deposit and Withdrawal**: 
+   - Users should be able to deposit and withdraw from their accounts.
+
+3. **User Authentication and Management**: 
+   - Implement an authentication system to manage access to data and manage users with different roles.
+
+4. **Microservice Architecture**: 
+   - Use microservice architecture to separate different parts of the application.
+
+5. **gRPC Communication**: 
+   - Use gRPC for service communication.
+
+6. **Protobuf for API**: 
+   - Use Protobuf for defining APIs.
+
+7. **Separation of UI and Business Logic**: 
+   - Separate the user interface from business logic.
+
+8. **Database Migration**: 
+   - Use database migration for managing schemas.
+
+9. **Password Hashing**: 
+   - Use Bcrypt for hashing passwords.
+
+10. **Session Management**: 
+    - Use JWT for managing sessions.
+
+11. **Notifications**: 
+    - Send notifications after any transaction.
+
+12. **Concurrent Transaction Management**: 
+    - Handle concurrent transactions properly.
+
+13. **Testing**: 
+    - Implement unit tests and integration tests.
+
+14. **API Documentation**: 
+    - Document the API using Swagger.
+
+15. **Readme Documentation**: 
+    - Add a README to explain how to use the system.
+
 ## Architecture
 
 ![Architecture Diagram](architecture.png)
