@@ -118,7 +118,7 @@ The task involves creating a system for managing financial affairs with the foll
 
 ### Prerequisites
 
-- Go 1.12 or higher
+- Go 1.22 or higher
 - Docker (optional, for containerization)
 - gRPC and Protobuf tools
 - PostgreSQL
