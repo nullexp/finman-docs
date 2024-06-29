@@ -12,7 +12,7 @@ FinMan is a microservices-based financial management system designed to handle v
 
 1. **Authentication Service (`finman-auth-service`)**
     - Handles user authentication and JWT generation.
-    - Provides endpoints for user login and registration.
+    - Provides endpoints for user login.
     - Communicates with the User Service to validate user existence.
 
 2. **User Service (`finman-user-service`)**
@@ -65,9 +65,10 @@ FinMan is a microservices-based financial management system designed to handle v
 
 ### Prerequisites
 
-- Go 1.17 or higher
+- Go 1.12 or higher
 - Docker (optional, for containerization)
 - gRPC and Protobuf tools
+- PostgreSQL
 
 ### Cloning the Repositories
 
@@ -79,11 +80,11 @@ FinMan is a microservices-based financial management system designed to handle v
 
 2. Clone the individual service repositories:
     ```bash
-    git clone https://github.com/yourusername/finman-auth-service.git
-    git clone https://github.com/yourusername/finman-user-service.git
-    git clone https://github.com/yourusername/finman-transaction-service.git
-    git clone https://github.com/yourusername/finman-role-service.git
-    git clone https://github.com/yourusername/finman-api-gateway.git
+    git clone https://github.com/nullexp/finman-auth-service.git
+    git clone https://github.com/nullexp/finman-user-service.git
+    git clone https://github.com/nullexp/finman-transaction-service.git
+    git clone https://github.com/nullexp/finman-role-service.git
+    git clone https://github.com/nullexp/finman-api-gateway.git
     ```
 
 ### Running the Services
