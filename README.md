@@ -59,7 +59,7 @@ The task involves creating a system for managing financial affairs with the foll
 
 ## Architecture
 
-![Architecture Diagram](architecture.png)
+![Architecture Diagram](architecture.svg)
 
 ### Services
 
