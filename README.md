@@ -1,3 +1,7 @@
+Here's the formatted GitHub README for your FinMan project:
+
+---
+
 # FinMan Project Documentation
 
 ## Overview
@@ -127,20 +131,20 @@ The task involves creating a system for managing financial affairs with the foll
 
 1. Clone the documentation repository:
     
-bash
+    ```bash
     git clone https://github.com/yourusername/finman-docs.git
     cd finman-docs
-
+    ```
 
 2. Clone the individual service repositories:
     
-bash
+    ```bash
     git clone https://github.com/nullexp/finman-auth-service.git
     git clone https://github.com/nullexp/finman-user-service.git
     git clone https://github.com/nullexp/finman-transaction-service.git
     git clone https://github.com/nullexp/finman-role-service.git
     git clone https://github.com/nullexp/finman-api-gateway.git
-
+    ```
 
 ### Running the Services
 
@@ -152,7 +156,7 @@ We welcome contributions from the community. Please read our [Contributing Guide
 
 ## API Documentation
 
-Each service uses Swagger for API documentation. You can view the API documentation by running the service and navigating to /swagger/index.html in your browser.
+Each service uses Swagger for API documentation. You can view the API documentation by running the service and navigating to `/swagger/index.html` in your browser.
 
 ## Frequently Asked Questions (FAQ)
 
@@ -172,3 +176,7 @@ Each service uses Swagger for API documentation. You can view the API documentat
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Feel free to adjust and expand on any section as needed for your specific project requirements and details.
