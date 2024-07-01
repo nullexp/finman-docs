@@ -1,3 +1,7 @@
+Here's the formatted GitHub README for your FinMan project:
+
+---
+
 # FinMan Project Documentation
 
 ## Overview
@@ -63,21 +67,21 @@ The task involves creating a system for managing financial affairs with the foll
 
 ### Services
 
-1. **Authentication Service (`finman-auth-service`)**
+1. **Authentication Service (finman-auth-service)**
     - Handles user authentication and JWT generation.
     - Provides endpoints for user login.
     - Communicates with the User Service to validate user existence.
 
-2. **User and Role Service (`finman-user-role-service`)**
+2. **User and Role Service (finman-user-service)**
     - Manages user profiles, information, and roles.
     - Provides endpoints for user and role creation, update, and retrieval.
 
-3. **Transaction Service (`finman-transaction-service`)**
+3. **Transaction Service (finman-transaction-service)**
     - Manages financial transactions including deposits and withdrawals.
     - Provides endpoints for creating and retrieving transactions.
     - Sends notifications after any transaction.
 
-4. **API Gateway (`finman-api-gateway`)**
+4. **API Gateway (finman-api-gateway)**
     - Routes incoming HTTP requests to the appropriate microservice.
     - Handles API aggregation and provides a unified entry point for the clients.
     - Manages authentication and authorization.
@@ -91,7 +95,7 @@ The task involves creating a system for managing financial affairs with the foll
 ### Security
 
 - **Authentication**: Managed by the `finman-auth-service` using JWT.
-- **Authorization**: Managed by the `finman-user-role-service`.
+- **Authorization**: Managed by the `finman-user-service`.
 - **Password Hashing**: Using Bcrypt.
 - **Session Management**: Using JWT.
 
@@ -114,7 +118,7 @@ The task involves creating a system for managing financial affairs with the foll
 
 ### Prerequisites
 
-- Go 1.12 or higher
+- Go 1.22 or higher
 - Docker (optional, for containerization)
 - gRPC and Protobuf tools
 - PostgreSQL
@@ -122,15 +126,17 @@ The task involves creating a system for managing financial affairs with the foll
 ### Cloning the Repositories
 
 1. Clone the documentation repository:
+    
     ```bash
     git clone https://github.com/yourusername/finman-docs.git
     cd finman-docs
     ```
 
 2. Clone the individual service repositories:
+    
     ```bash
     git clone https://github.com/nullexp/finman-auth-service.git
-    git clone https://github.com/nullexp/finman-user-role-service.git
+    git clone https://github.com/nullexp/finman-user-service.git
     git clone https://github.com/nullexp/finman-transaction-service.git
     git clone https://github.com/nullexp/finman-api-gateway.git
     ```
@@ -160,7 +166,7 @@ Each service uses Swagger for API documentation. You can view the API documentat
 
 **How do I handle user roles?**
 
-- User roles are managed by the `finman-user-role-service`. Please refer to its README for more details.
+- User roles are managed by the `finman-user-service`. Please refer to its README for more details.
 
 ## License
 
