@@ -116,9 +116,10 @@ The task involves creating a system for managing financial affairs with the foll
 ### Prerequisites
 
 - Go 1.22 or higher
-- Docker (optional, for containerization)
+- Docker (optional, for containerization, must create network with name finman-network => docker network create -d bridge finman-network)
 - gRPC and Protobuf tools
 - PostgreSQL
+- 
 
 ### Cloning the Repositories
 
