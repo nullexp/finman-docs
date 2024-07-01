@@ -68,20 +68,16 @@ The task involves creating a system for managing financial affairs with the foll
     - Provides endpoints for user login.
     - Communicates with the User Service to validate user existence.
 
-2. **User Service (`finman-user-service`)**
-    - Manages user profiles and information.
-    - Provides endpoints for user creation, update, and retrieval.
+2. **User and Role Service (`finman-user-role-service`)**
+    - Manages user profiles, information, and roles.
+    - Provides endpoints for user and role creation, update, and retrieval.
 
 3. **Transaction Service (`finman-transaction-service`)**
     - Manages financial transactions including deposits and withdrawals.
     - Provides endpoints for creating and retrieving transactions.
     - Sends notifications after any transaction.
 
-4. **Role Management Service (`finman-role-service`)**
-    - Manages roles and permissions for users.
-    - Provides endpoints for creating roles, assigning roles to users, and retrieving roles.
-
-5. **API Gateway (`finman-api-gateway`)**
+4. **API Gateway (`finman-api-gateway`)**
     - Routes incoming HTTP requests to the appropriate microservice.
     - Handles API aggregation and provides a unified entry point for the clients.
     - Manages authentication and authorization.
@@ -95,7 +91,7 @@ The task involves creating a system for managing financial affairs with the foll
 ### Security
 
 - **Authentication**: Managed by the `finman-auth-service` using JWT.
-- **Authorization**: Managed by the `finman-role-service`.
+- **Authorization**: Managed by the `finman-user-role-service`.
 - **Password Hashing**: Using Bcrypt.
 - **Session Management**: Using JWT.
 
@@ -134,9 +130,8 @@ The task involves creating a system for managing financial affairs with the foll
 2. Clone the individual service repositories:
     ```bash
     git clone https://github.com/nullexp/finman-auth-service.git
-    git clone https://github.com/nullexp/finman-user-service.git
+    git clone https://github.com/nullexp/finman-user-role-service.git
     git clone https://github.com/nullexp/finman-transaction-service.git
-    git clone https://github.com/nullexp/finman-role-service.git
     git clone https://github.com/nullexp/finman-api-gateway.git
     ```
 
@@ -165,8 +160,41 @@ Each service uses Swagger for API documentation. You can view the API documentat
 
 **How do I handle user roles?**
 
-- User roles are managed by the `finman-role-service`. Please refer to its README for more details.
+- User roles are managed by the `finman-user-role-service`. Please refer to its README for more details.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+### Running with Docker Compose
+
+To run the project using Docker Compose, follow these steps:
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/nullexp/finman.git
+    cd finman
+    ```
+
+2. Create a `.env` file in the root directory with the following environment variables:
+    ```env
+    # Database configuration
+    DB_HOST=localhost
+    DB_PORT=5432
+    DB_USER=postgres
+    DB_PASSWORD=postgres
+    DB_NAME=finman
+
+    # Service ports
+    AUTH_SERVICE_PORT=50051
+    USER_ROLE_SERVICE_PORT=50052
+    TRANSACTION_SERVICE_PORT=50053
+    API_GATEWAY_PORT=8080
+    ```
+
+3. Run Docker Compose:
+    ```bash
+    docker-compose up
+    ```
+
+This will start all the services defined in the `docker-compose.yml` file. Make sure you have Docker and Docker Compose installed on your machine.
