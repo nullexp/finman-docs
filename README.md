@@ -1,6 +1,3 @@
-Here's the formatted GitHub README for your FinMan project:
-
----
 
 # FinMan Project Documentation
 
