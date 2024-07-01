@@ -169,35 +169,3 @@ Each service uses Swagger for API documentation. You can view the API documentat
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### Running with Docker Compose
-
-To run the project using Docker Compose, follow these steps:
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/nullexp/finman.git
-    cd finman
-    ```
-
-2. Create a `.env` file in the root directory with the following environment variables:
-    ```env
-    # Database configuration
-    DB_HOST=localhost
-    DB_PORT=5432
-    DB_USER=postgres
-    DB_PASSWORD=postgres
-    DB_NAME=finman
-
-    # Service ports
-    AUTH_SERVICE_PORT=50051
-    USER_ROLE_SERVICE_PORT=50052
-    TRANSACTION_SERVICE_PORT=50053
-    API_GATEWAY_PORT=8080
-    ```
-
-3. Run Docker Compose:
-    ```bash
-    docker-compose up
-    ```
-
-This will start all the services defined in the `docker-compose.yml` file. Make sure you have Docker and Docker Compose installed on your machine.
