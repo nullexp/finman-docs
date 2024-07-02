@@ -240,6 +240,52 @@ To run the script, execute:
 ./start_services.sh
 ```
 
+Also if you are a windows user :
+
+```powershell
+# Create a shared network in Docker
+docker network create -d bridge finman-network
+
+# Function to clone and start a service
+function Start-Service {
+    param (
+        [string]$repoUrl,
+        [string]$serviceName
+    )
+
+    Write-Host "Starting $serviceName..."
+
+    git clone $repoUrl
+    Set-Location $serviceName
+    make docker-compose-up
+    Set-Location ..
+}
+
+# Start finman-user-service
+Start-Service "https://github.com/nullexp/finman-user-service.git" "finman-user-service"
+
+# Start finman-auth-service
+Start-Service "https://github.com/nullexp/finman-auth-service.git" "finman-auth-service"
+
+# Start finman-transaction-service
+Start-Service "https://github.com/nullexp/finman-transaction-service.git" "finman-transaction-service"
+
+# Start finman-api-gateway
+Start-Service "https://github.com/nullexp/finman-api-gateway.git" "finman-api-gateway"
+
+Write-Host "All services are up and running."
+
+# Access the API Gateway Swagger documentation
+Write-Host "You can access the API Gateway Swagger documentation at http://{gateway-ip}:{gateway-port}/openapi/"
+```
+
+save this file and run it with:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+.\start_services.ps1
+```
+
 ## Contributing
 
 We welcome contributions from the community. Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
