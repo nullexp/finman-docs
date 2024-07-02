@@ -149,20 +149,22 @@ Here are the steps:
 docker network create -d bridge finman-network
  ```
 
-2. start finman-user-service
+2. Start finman-user-service:
     use make docker-compose-up after cloning its git repository
 
-3. start finman-auth-service
+3. Start finman-auth-service:
     use make docker-compose-up after cloning its git repository
 
-3. start finman-auth-service
+3. Start finman-auth-service
     use make docker-compose-up after cloning its git repository
 
-4. start finman-transaction-service
+4. Start finman-transaction-service:
     use make docker-compose-up after cloning its git repository
 
-5. start finman-api-gateway
-    use make docker-compose-up after cloning its git repository
+5. Start finman-api-gateway:
+    use make docker-compose-up after cloning its git repository.
+    open http://{gateway-ip}:{gateway-port}/openapi/
+    
 
 
 ## Contributing
