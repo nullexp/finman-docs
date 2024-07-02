@@ -118,7 +118,7 @@ The task involves creating a system for managing financial affairs with the foll
 - Go 1.22 or higher
 - Docker (optional, for containerization)
 - gRPC and Protobuf tools
-- PostgreSQL
+- make
 
 ### Cloning the Repositories
 
@@ -142,10 +142,28 @@ The task involves creating a system for managing financial affairs with the foll
 
 Each service has its own setup and configuration. Please refer to the individual README files in each service repository for detailed setup instructions.
 
-But make sure you create a network with the name finman-network:
+Here are the steps:
+
+1. Create a shared network in the docker:
 ```bash
 docker network create -d bridge finman-network
  ```
+
+2. start finman-user-service
+    use make docker-compose-up after cloning its git repository
+
+3. start finman-auth-service
+    use make docker-compose-up after cloning its git repository
+
+3. start finman-auth-service
+    use make docker-compose-up after cloning its git repository
+
+4. start finman-transaction-service
+    use make docker-compose-up after cloning its git repository
+
+5. start finman-api-gateway
+    use make docker-compose-up after cloning its git repository
+
 
 ## Contributing
 
