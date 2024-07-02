@@ -140,32 +140,105 @@ The task involves creating a system for managing financial affairs with the foll
 
 ### Running the Services
 
+Here is the revised README with the provided git repositories:
+
+### Running the Services
+
 Each service has its own setup and configuration. Please refer to the individual README files in each service repository for detailed setup instructions.
 
 Here are the steps:
 
-1. Create a shared network in the docker:
+1. Create a shared network in Docker:
+   ```bash
+   docker network create -d bridge finman-network
+   ```
+
+2. Start `finman-user-service`:
+   ```bash
+   git clone https://github.com/nullexp/finman-user-service.git
+   cd finman-user-service
+   make docker-compose-up
+   ```
+
+3. Start `finman-auth-service`:
+   ```bash
+   git clone https://github.com/nullexp/finman-auth-service.git
+   cd finman-auth-service
+   make docker-compose-up
+   ```
+
+4. Start `finman-transaction-service`:
+   ```bash
+   git clone https://github.com/nullexp/finman-transaction-service.git
+   cd finman-transaction-service
+   make docker-compose-up
+   ```
+
+5. Start `finman-api-gateway`:
+   ```bash
+   git clone https://github.com/nullexp/finman-api-gateway.git
+   cd finman-api-gateway
+   make docker-compose-up
+   ```
+
+6. Access the API Gateway Swagger documentation:
+   ```
+   open http://localhost:8085/openapi/
+   ```
+   note that you can change the ip and the port in its env
+
+### Easier Option: Using a Bash Script
+
+You can automate the above steps using a bash script. Here is an example script:
+
 ```bash
+#!/bin/bash
+
+# Create a shared network in Docker
 docker network create -d bridge finman-network
- ```
 
-2. Start finman-user-service:
-    use make docker-compose-up after cloning its git repository
+# Function to clone and start a service
+start_service() {
+    local repo_url=$1
+    local service_name=$2
 
-3. Start finman-auth-service:
-    use make docker-compose-up after cloning its git repository
+    echo "Starting $service_name..."
 
-3. Start finman-auth-service
-    use make docker-compose-up after cloning its git repository
+    git clone $repo_url
+    cd $service_name
+    make docker-compose-up
+    cd ..
+}
 
-4. Start finman-transaction-service:
-    use make docker-compose-up after cloning its git repository
+# Start finman-user-service
+start_service "https://github.com/nullexp/finman-user-service.git" "finman-user-service"
 
-5. Start finman-api-gateway:
-    use make docker-compose-up after cloning its git repository.
-    open http://{gateway-ip}:{gateway-port}/openapi/
-    
+# Start finman-auth-service
+start_service "https://github.com/nullexp/finman-auth-service.git" "finman-auth-service"
 
+# Start finman-transaction-service
+start_service "https://github.com/nullexp/finman-transaction-service.git" "finman-transaction-service"
+
+# Start finman-api-gateway
+start_service "https://github.com/nullexp/finman-api-gateway.git" "finman-api-gateway"
+
+echo "All services are up and running."
+
+# Access the API Gateway Swagger documentation
+echo "You can access the API Gateway Swagger documentation at http://localhost:8085/openapi/"
+```
+
+Save this script to a file, for example `start_services.sh`, and give it execute permissions:
+
+```bash
+chmod +x start_services.sh
+```
+
+To run the script, execute:
+
+```bash
+./start_services.sh
+```
 
 ## Contributing
 
