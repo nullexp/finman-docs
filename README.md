@@ -186,6 +186,7 @@ Here are the steps:
    open http://localhost:8085/openapi/
    ```
    note that you can change the ip and the port in its env
+   ![Swagger](swagger.png)
 
 ### Easier Option: Using a Bash Script
 
