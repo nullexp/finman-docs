@@ -116,10 +116,9 @@ The task involves creating a system for managing financial affairs with the foll
 ### Prerequisites
 
 - Go 1.22 or higher
-- Docker (optional, for containerization, must create network with name finman-network => docker network create -d bridge finman-network)
+- Docker (optional, for containerization)
 - gRPC and Protobuf tools
 - PostgreSQL
-- 
 
 ### Cloning the Repositories
 
@@ -142,6 +141,11 @@ The task involves creating a system for managing financial affairs with the foll
 ### Running the Services
 
 Each service has its own setup and configuration. Please refer to the individual README files in each service repository for detailed setup instructions.
+
+But make sure you create a network with the name finman-network:
+```bash
+docker network create -d bridge finman-network
+ ```
 
 ## Contributing
 
