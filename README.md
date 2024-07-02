@@ -276,7 +276,7 @@ Start-Service "https://github.com/nullexp/finman-api-gateway.git" "finman-api-ga
 Write-Host "All services are up and running."
 
 # Access the API Gateway Swagger documentation
-Write-Host "You can access the API Gateway Swagger documentation at http://{gateway-ip}:{gateway-port}/openapi/"
+Write-Host "You can access the API Gateway Swagger documentation at http://{localhost}:{8085}/openapi/"
 ```
 
 save this file and run it with:
