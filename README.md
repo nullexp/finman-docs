@@ -293,7 +293,7 @@ We welcome contributions from the community. Please read our [Contributing Guide
 
 ## API Documentation
 
-Each service uses Swagger for API documentation. You can view the API documentation by running the service and navigating to `/swagger/index.html` in your browser.
+Each service uses Swagger for API documentation. You can view the API documentation by running the service and navigating to `/openapi/` in your browser.
 
 ## Frequently Asked Questions (FAQ)
 
